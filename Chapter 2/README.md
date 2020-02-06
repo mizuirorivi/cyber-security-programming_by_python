@@ -39,7 +39,7 @@ while(True):
 ```
 
 
-[簡易的なUDPクライアントの作成]()
+**[簡易的なUDPクライアントの作成](https://github.com/mizuirorivi/cyber-security-programming_by_python/blob/master/Chapter%202/udpclient.py)**
 ```python
 import socket
 
@@ -59,7 +59,7 @@ data, addr = socket.recvfrom(4096)
 print(data)
 ```
 
-[簡易的TCPサーバの作成]()
+**[簡易的TCPサーバの作成](https://github.com/mizuirorivi/cyber-security-programming_by_python/blob/master/Chapter%202/TCPserver.py)**
 ```python
 import socket
 import threading
