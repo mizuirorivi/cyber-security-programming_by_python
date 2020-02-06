@@ -10,7 +10,7 @@ socket = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 #データの送信
 #udpだとsendoto?
 socket.sendto(b"AAABBBCCC",(target_host,target_port))
-
-data,addr = socket.recvfrom(4096)
+#socket.recvfrom({バイト数}):{バイト数}だけデータを受けとり、byte型[byte]と
+data, addr = socket.recvfrom(4096)
 
 print(data)
