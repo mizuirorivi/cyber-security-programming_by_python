@@ -3,7 +3,7 @@
 「データグラムソケット」：UDP を使用したプロセスの通信を可能にする<br>
 「raw ソケット」:ICMP へのアクセスを提供する
 
-[簡易的なtcpクライアントの作成](https://github.com/mizuirorivi/cyber-security-programming_by_python/blob/master/Chapter%202/tcpclient.py)
+[簡易的なTCPクライアントの作成](https://github.com/mizuirorivi/cyber-security-programming_by_python/blob/master/Chapter%202/tcpclient.py)
 ```python
 import socket
 
@@ -25,6 +25,11 @@ while(True):
         print(response)
         break
 ```
+|SOCK_STREAM|順序性と信頼性があり、双方向の接続されたバイトストリーム（byte stream）を提供する(TCP)|
+----|----
+|SOCK_DGRAM|データグラム（接続、信頼性なし、固定最大長メッセージ）をサポートする(UDP)|
+[簡易的なUDPクライアントの作成]()
+```python
 
 
 
@@ -35,5 +40,7 @@ while(True):
 
 
 
-**参照リンク**<br>
-https://ja.wikipedia.org/wiki/Raw_socket
+**参考リンク**<br>
+https://ja.wikipedia.org/wiki/Raw_socket<br>
+https://docs.python.org/ja/3/library/socket.html<br>
+https://qiita.com/__init__/items/5c89fa5b37b8c5ed32a4<br>
