@@ -12,6 +12,8 @@ client.connect((target_host,target_port))
 #データの送信
 client.send(b"GET / HTTP/1.1\r\nHost: google.com\r\n\r\n")
 #データの受信
-response = client.recv(4096)
-
-print(response)
+while(True):
+    response = client.recv(4096)
+    if len(response)>0:
+        print(response)
+        break
