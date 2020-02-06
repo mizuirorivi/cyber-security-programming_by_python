@@ -27,4 +27,5 @@ while True:
 
     #受信データを処理するスレッドの起動
     client_handler = threading.Thread(target=handle_client,args=(client,))
+    #スレッドの開始
     client_handler.start()
