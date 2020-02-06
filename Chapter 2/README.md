@@ -61,6 +61,7 @@ print(data)
 |python_function|意味|
 ----|----
 |socket.accept()|接続を受け付けます。ソケットはアドレスにbind済みで、listen中である必要があります。戻り値は (conn, address) のペアで、 conn は接続を通じてデータの送受信を行うための 新しい ソケットオブジェクト、 address は接続先でソケットにbindしているアドレスを示します。|
+|class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)|コンストラクタは常にキーワード引数を使って呼び出さなければなりません。各引数は以下の通りです:<br>target は run() メソッドによって起動される呼び出し可能オブジェクトです。デフォルトでは何も呼び出さないことを示す None になっています。<br>args は target を呼び出すときの引数タプルです。デフォルトは () です。|
 
 
 
