@@ -58,7 +58,7 @@ data, addr = socket.recvfrom(4096)
 
 print(data)
 ```
-|pythonの関数|意味|
+|python_function|意味|
 ----|----
 |socket.accept()|接続を受け付けます。ソケットはアドレスにbind済みで、listen中である必要があります。戻り値は (conn, address) のペアで、 conn は接続を通じてデータの送受信を行うための 新しい ソケットオブジェクト、 address は接続先でソケットにbindしているアドレスを示します。|
 
