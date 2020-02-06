@@ -12,8 +12,8 @@
 ## アドレスファミリ
 |アドレスファミリ|意味|
 ----|----
-｜AF_INET｜IPv4 によるソケット｜
-｜AF_INET6｜IPv6 によるソケット｜
+|AF_INET|IPv4 によるソケット |
+|AF_INET6 |IPv6 によるソケット |
 
 **[簡易的なTCPクライアントの作成](https://github.com/mizuirorivi/cyber-security-programming_by_python/blob/master/Chapter%202/tcpclient.py)**
 ```python
