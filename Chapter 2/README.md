@@ -26,9 +26,10 @@ while(True):
         break
 ```
 |ソケットタイプ|意味|
-|SOCK_STREAM|順序性と信頼性があり、双方向の接続されたバイトストリーム（byte stream）を提供する(TCP)|
 ----|----
+|SOCK_STREAM|順序性と信頼性があり、双方向の接続されたバイトストリーム（byte stream）を提供する(TCP)|
 |SOCK_DGRAM|データグラム（接続、信頼性なし、固定最大長メッセージ）をサポートする(UDP)|
+<br>
 
 [簡易的なUDPクライアントの作成]()
 ```python
