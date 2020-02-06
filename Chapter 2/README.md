@@ -25,6 +25,7 @@ while(True):
         print(response)
         break
 ```
+##ソケットタイプ
 |ソケットタイプ|意味|
 ----|----
 |SOCK_STREAM|順序性と信頼性があり、双方向の接続されたバイトストリーム（byte stream）を提供する(TCP)|
