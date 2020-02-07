@@ -19,8 +19,8 @@
 ```python
 import socket
 
-target_host = "www.google.com"
-target_port = 80
+target_host = "127.0.0.1"
+target_port = 9999
 
 #ソケットオブジェクトの作成
 #AF_INETは標準的なIPv4のアドレスやホスト名を使用することを指していて、SOCK_STREAMはTCPを用いることを示している
@@ -36,6 +36,7 @@ while(True):
     if len(response)>0:
         print(response)
         break
+
 ```
 
 
@@ -81,7 +82,7 @@ def handle_client(client_socket):
     print("[*] Received:{0}".format(request))
 
     #パケットの返送
-    client_socket.send("ACK!")
+    client_socket.send(b"ACK!")
     client_socket.close()
 
 while True:
@@ -92,6 +93,43 @@ while True:
     client_handler = threading.Thread(target=handle_client,args=(client,))
     #スレッドの開始
     client_handler.start()
+
+```
+**[簡易的はHTTPサーバ]()**
+```python
+import socket 
+from threading import Thread
+from datetime import datetime
+
+buf_size = 1024
+bind_ip = "0.0.0.0"
+bind_port = 8000
+
+server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+server.bind((bind_ip,bind_port))
+
+server.listen(5)
+
+print("[*] Listening on {0}:{1}".format(bind_ip,bind_port))
+
+def handle_client(client_socket):
+    request = client_socket.recv(buf_size)
+    print("[*]Received:\n{}{}".format(request.decode('utf-8'),"-"*24))
+
+    now = datetime.now().strftime('%a, %d %b %Y %H:%M:%S GMT')
+    html = """<!DOCTYPE html><html lang="ja"><body><p>Test Server<p></body></html>"""
+    header = """HTTP/1.0 200 OK\r\nDate: {}\r\nServer:Test Http Server\r\nContent-Type: text/html;charset=utf-8\r\n\r\n""".format(now)
+    if request.startswith(b'HEAD'):
+        client_socket.send(header.encode('utf-8'))
+    elif request.startswith(b'GET'):
+        response = header[:-2]+"Content-Length:{}\r\n".format(len(html))+"\r\n"+html
+        client_socket.send(response.encode('utf-8'))
+
+while True:
+    client, addr = server.accept()
+    print("[*] Accpeted connection from:{}:{}".format(addr[0],addr[1]))
+    client_handler = Thread(target=handle_client,args=[client])
+    client_handler.start()
 ```
 |python_function|意味|
 ----|----
@@ -99,9 +137,14 @@ while True:
 |class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)|コンストラクタは常にキーワード引数を使って呼び出さなければなりません。各引数は以下の通りです:<br>target は run() メソッドによって起動される呼び出し可能オブジェクトです。デフォルトでは何も呼び出さないことを示す None になっています。<br>args は target を呼び出すときの引数タプルです。デフォルトは () です。|
 
 
-
-**参考リンク**<br>
+## 疑問点
+1. ローカルホストにサーバ(TCPserver.py)を建てて、そこに対してtcpclientを実行して繋ぐことは出来たけど、
+virtualboxで仮想環境を建てた時にはうまくいかなかった。おそらく、ネットワークに対しての知見とvirtualboxに対しての知見が足りなかったのだと思う。
+<br>
+## 参考リンク
 https://ja.wikipedia.org/wiki/Raw_socket<br>
 https://docs.python.org/ja/3/library/socket.html<br>
 https://qiita.com/__init__/items/5c89fa5b37b8c5ed32a4<br>
-https://docs.python.org/ja/3/library/threading.html#threading.Thread
+https://docs.python.org/ja/3/library/threading.html#threading.Thread<br>
+https://engineeringnote.hateblo.jp/entry/python/bhp/2-4<br>
+https://engineeringnote.hateblo.jp/entry/python/bhp/2-5#Netcat%E3%81%A8%E3%81%AF
