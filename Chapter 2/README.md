@@ -140,11 +140,14 @@ while True:
 ## 疑問点
 1. ローカルホストにサーバ(TCPserver.py)を建てて、そこに対してtcpclientを実行して繋ぐことは出来たけど、
 virtualboxで仮想環境を建てた時にはうまくいかなかった。おそらく、ネットワークに対しての知見とvirtualboxに対しての知見が足りなかったのだと思う。
-<br>
+
 ## 参考リンク
+
 https://ja.wikipedia.org/wiki/Raw_socket<br>
 https://docs.python.org/ja/3/library/socket.html<br>
 https://qiita.com/__init__/items/5c89fa5b37b8c5ed32a4<br>
 https://docs.python.org/ja/3/library/threading.html#threading.Thread<br>
 https://engineeringnote.hateblo.jp/entry/python/bhp/2-4<br>
 https://engineeringnote.hateblo.jp/entry/python/bhp/2-5#Netcat%E3%81%A8%E3%81%AF
+
+<br>![参考書籍](https://www.amazon.co.jp/gp/product/4873117313/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873117313&linkCode=as2&tag=engineeringnote-22&linkId=5070b718494dc6c144d41fc0ef0d4d78 "参考書籍")
