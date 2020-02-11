@@ -135,6 +135,7 @@ while True:
 ----|----
 |socket.accept()|接続を受け付けます。ソケットはアドレスにbind済みで、listen中である必要があります。戻り値は (conn, address) のペアで、 conn は接続を通じてデータの送受信を行うための 新しい ソケットオブジェクト、 address は接続先でソケットにbindしているアドレスを示します。|
 |class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)|コンストラクタは常にキーワード引数を使って呼び出さなければなりません。各引数は以下の通りです:<br>target は run() メソッドによって起動される呼び出し可能オブジェクトです。デフォルトでは何も呼び出さないことを示す None になっています。<br>args は target を呼び出すときの引数タプルです。デフォルトは () です。|
+|argparse|
 
 
 ## 疑問点
@@ -151,5 +152,7 @@ https://engineeringnote.hateblo.jp/entry/python/bhp/2-4<br>
 https://engineeringnote.hateblo.jp/entry/python/bhp/2-5#Netcat%E3%81%A8%E3%81%AF
 
 <br>
+
+## 参考図書
 
 <p><a href="https://www.amazon.co.jp/gp/product/4873117313/ref=as_li_tl?ie=UTF8&camp=247&creative=1211&creativeASIN=4873117313&linkCode=as2&tag=engineeringnote-22&linkId=5070b718494dc6c144d41fc0ef0d4d78"><img src="https://images-na.ssl-images-amazon.com/images/I/518ZyCCEKGL._SX350_BO1,204,203,200_.jpg" width=100></a></p>
